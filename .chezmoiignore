@@ -3,3 +3,5 @@ config.fish
 {{- else if ne .shell "zsh" }}
 .zshrc
 {{- end }}
+README.md
+LICENSE
