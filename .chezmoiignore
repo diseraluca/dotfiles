@@ -1,0 +1,5 @@
+{{- if ne .chezmoi.shell "fish" }}
+config.fish
+{{- else if ne .chezmoi.shell "zsh" }}
+.zshrc
+{{- end }}
