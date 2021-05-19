@@ -38,7 +38,11 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior nil
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-private-snippets-directory nil)
      better-defaults
      emacs-lisp
      (clojure :variables
@@ -54,7 +58,13 @@ This function should only modify configuration layer settings."
      git
      helm
      bibtex
-     lsp
+     (lsp :variables
+          lsp-rust-server 'rust-analyzer
+          lsp-rust-analyzer-server-display-inlay-hints t
+          lsp-ui-sideline-code-actions-prefix " "
+          lsp-ui-sideline-show-hover nil
+          lsp-ui-doc-enable nil
+          lsp-headerline-breadcrumb-enable t)
      markdown
      multiple-cursors
      (org :variables
@@ -68,7 +78,14 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     (c-c++ :variables
+            c-c++-backend 'lsp-ccls
+            c-c++-enable-semantic-highlight 'rainbow
+            c-c++-lsp-semantic-highligh-method 'overlay
+            c-c++-adopt-subprojects t
+            c-c++-enable-organize-includes-on-save t)
      spell-checking
+     dap
      syntax-checking
      version-control
      treemacs)
