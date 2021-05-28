@@ -58,7 +58,10 @@ This function should only modify configuration layer settings."
      git
      helm
      bibtex
+     (rust :variables
+           rust-format-on-save t)
      (lsp :variables
+          cargo-process-reload-on-modify t
           lsp-rust-server 'rust-analyzer
           lsp-rust-analyzer-server-display-inlay-hints t
           lsp-ui-sideline-code-actions-prefix " "
