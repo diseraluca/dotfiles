@@ -3,5 +3,11 @@ config.fish
 {{- else if ne .shell "zsh" }}
 .zshrc
 {{- end }}
+{{- if ne .emacs "spacemacs" }}
+.spacemacs
+{{- else if ne .emacs "doom" }}
+.doom.d
+.dot_emacs.d
+{{- end }}
 README.md
 LICENSE
