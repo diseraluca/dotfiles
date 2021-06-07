@@ -7,7 +7,7 @@ config.fish
 .spacemacs
 {{- else if ne .emacs "doom" }}
 .doom.d
-.dot_emacs.d
+.emacs.d
 {{- end }}
 README.md
 LICENSE
