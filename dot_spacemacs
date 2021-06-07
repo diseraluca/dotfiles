@@ -57,6 +57,8 @@ This function should only modify configuration layer settings."
      pdf
      git
      helm
+     yaml
+     ess
      bibtex
      (rust :variables
            rust-format-on-save t)
