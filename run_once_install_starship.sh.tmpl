@@ -1,4 +1,4 @@
 {{ if (and (eq .chezmoi.osRelease.name "Arch Linux") (eq .shell "fish")) -}}
 #!/bin/sh
-pacman -S --needed starship
+sudo pacman -S --needed starship
 {{ end -}}
