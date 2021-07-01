@@ -1,6 +1,6 @@
 {{ if eq .chezmoi.osRelease.name "Arch Linux" -}}
 #!/bin/sh
-pacman -S --needed rustup rust-analyzer
+sudo pacman -S --needed rustup rust-analyzer
 rustup toolchain install stable
 cargo install cargo-edit cargo-audit cargo-outdated
 {{ end -}}
