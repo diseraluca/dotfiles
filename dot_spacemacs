@@ -44,7 +44,11 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory nil)
      better-defaults
+     idris
      emacs-lisp
+     (cmake :variables
+            cmake-backend 'lsp
+            cmake-enable-cmake-ide-support t)
      (clojure :variables
               clojure-enable-fancify-symbols t
               clojure-backend 'lsp
@@ -60,6 +64,7 @@ This function should only modify configuration layer settings."
      yaml
      ess
      bibtex
+     factor
      (rust :variables
            rust-format-on-save t)
      (lsp :variables
@@ -90,6 +95,7 @@ This function should only modify configuration layer settings."
             c-c++-adopt-subprojects t
             c-c++-enable-organize-includes-on-save t)
      spell-checking
+     mermaid
      dap
      syntax-checking
      version-control
@@ -644,6 +650,10 @@ before packages are loaded."
 
   (require 'shen-mode)
   (require 'inf-shen)
+
+  (setq ob-mermaid-cli-path "/usr/bin/mmdc")
+  (add-to-list 'load-path "/usr/lib/factor/misc/fuel")
+  (setq fuel-factor-root-dir "/usr/lib/factor")
 )
 
 
