@@ -115,3 +115,6 @@
 
 (after! cc-mode
   (set-company-backend! 'c++-mode 'company-c-headers))
+
+;; Lua lsp
+(setq lsp-clients-lua-language-server-bin "/usr/bin/")
