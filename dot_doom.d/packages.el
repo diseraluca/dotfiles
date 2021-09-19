@@ -49,3 +49,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 (package! company-c-headers)
+(package! wat-mode
+  :recipe (:host github :repo "devonsparks/wat-mode"))
+
+(package! ob-mermaid)
