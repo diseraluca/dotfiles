@@ -96,6 +96,20 @@
       :desc "Switch to last buffer"
       "TAB" 'evil-switch-to-windows-last-buffer)
 
+;; org-babel functions are mapped in org-babel-map, which can be
+;; accessed trough `'C-c C-v`' when in org-mode.
+;; As we use it a lot when dealing with org-roam notes, we want it to
+;; be accessible from the localleader map for the mode.
+;; We set it starting at prefix B, as b is already used for tables in
+;; the default keymap.
+;; F
+
+(map! :map org-mode-map
+      :localleader
+      (:prefix ("B" . "org-babel")
+       :desc "Demarcate code" "d" #'org-babel-demarcate-block
+       :desc "Execute block" "e" #'org-babel-execute-src-block))
+
 ;; Company
 
 (after! company
@@ -118,3 +132,6 @@
 
 ;; Lua lsp
 (setq lsp-clients-lua-language-server-bin "/usr/bin/")
+
+;; org-fragtog to automate latex fragment preview in org-mode
+(add-hook 'org-mode-hook 'org-fragtog-mode)

@@ -52,4 +52,7 @@
 (package! wat-mode
   :recipe (:host github :repo "devonsparks/wat-mode"))
 
+(package! mermaid-mode)
 (package! ob-mermaid)
+
+(package! org-fragtog)
