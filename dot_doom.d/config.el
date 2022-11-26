@@ -135,3 +135,7 @@
 
 ;; org-fragtog to automate latex fragment preview in org-mode
 (add-hook 'org-mode-hook 'org-fragtog-mode)
+
+(after! rust-mode
+  (setq lsp-rust-analyzer-server-display-inlay-hints t)
+  (setq rust-indent-offset 4))
